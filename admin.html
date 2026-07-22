@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Semi-Joias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Painel de Administração</header>
+  <main>
+    <h2>Cadastrar Produto</h2>
+    <div class="form-container">
+      <input type="text" id="nome" placeholder="Nome da joia">
+      <input type="text" id="valor" placeholder="Valor (R$)">
+      <textarea id="descricao" placeholder="Descrição"></textarea>
+      <input type="text" id="imagem" placeholder="URL da imagem">
+      <button onclick="adicionarProduto()">Adicionar</button>
+    </div>
+    <h2>Pré-visualização</h2>
+    <div class="catalogo" id="catalogo"></div>
+  </main>
+  <footer>&copy; 2026 Semi-Joias Elegance</footer>
+  <script src="script.js"></script>
+</body>
+</html>
