@@ -1,143 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxo Semi Joias</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<script src="https://kit.fontawesome.com/7d4c3d2c5d.js" crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8">
+  <title>Catálogo de Semi-Joias</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+      color: goldenrod;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    main {
+      padding: 20px;
+    }
+    .form-container {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      background-color: goldenrod;
+      color: #121212;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .produto {
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+    }
+    .produto img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .produto h3 {
+      color: goldenrod;
+      margin: 10px 0 5px;
+    }
+    .produto p {
+      margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
+  <header>Catálogo de Semi-Joias</header>
+  <main>
+    <div class="form-container">
+      <h2>Cadastrar Produto</h2>
+      <input type="text" id="nome" placeholder="Nome da joia">
+      <input type="text" id="valor" placeholder="Valor (R$)">
+      <textarea id="descricao" placeholder="Descrição"></textarea>
+      <input type="text" id="imagem" placeholder="URL da imagem">
+      <button onclick="adicionarProduto()">Adicionar</button>
+    </div>
 
-<header>
+    <h2>Catálogo</h2>
+    <div class="catalogo" id="catalogo"></div>
+  </main>
 
-<div class="logo">
-💎 Luxo Semi Joias
-</div>
+  <script>
+    function adicionarProduto() {
+      const nome = document.getElementById('nome').value;
+      const valor = document.getElementById('valor').value;
+      const descricao = document.getElementById('descricao').value;
+      const imagem = document.getElementById('imagem').value;
 
-<nav>
+      if (!nome || !valor || !descricao || !imagem) {
+        alert("Preencha todos os campos!");
+        return;
+      }
 
-<a href="index.html">Início</a>
-<a href="catalogo.html">Catálogo</a>
-<a href="#contato">Contato</a>
+      const catalogo = document.getElementById('catalogo');
+      const produto = document.createElement('div');
+      produto.className = 'produto';
+      produto.innerHTML = `
+        <img src="${imagem}" alt="${nome}">
+        <h3>${nome}</h3>
+        <p><strong>R$ ${valor}</strong></p>
+        <p>${descricao}</p>
+      `;
+      catalogo.appendChild(produto);
 
-</nav>
-
-</header>
-
-<section class="banner">
-
-<div class="banner-texto">
-
-<h1>Elegância em Cada Detalhe</h1>
-
-<p>
-Semi-joias sofisticadas para quem valoriza beleza,
-qualidade e exclusividade.
-</p>
-
-<a href="catalogo.html" class="btn">
-Ver Catálogo
-</a>
-
-</div>
-
-</section>
-
-<section class="destaques">
-
-<h2>Produtos em Destaque</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800" alt="">
-
-<h3>Colar Dourado</h3>
-
-<p>R$ 129,90</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800">
-
-<h3>Anel Premium</h3>
-
-<p>R$ 89,90</p>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800">
-
-<h3>Pulseira Luxo</h3>
-
-<p>R$ 149,90</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="sobre">
-
-<h2>Por que escolher nossa loja?</h2>
-
-<p>
-
-Trabalhamos apenas com semi-joias de alta qualidade,
-acabamento impecável e garantia de satisfação.
-
-Nosso compromisso é oferecer elegância e sofisticação
-para todas as ocasiões.
-
-</p>
-
-</section>
-
-<section id="contato" class="contato">
-
-<h2>Entre em Contato</h2>
-
-<p>
-Solicite informações ou faça seu pedido pelo WhatsApp.
-</p>
-
-<a
-class="whatsapp"
-href="https://wa.me/5500000000000"
-target="_blank">
-
-<i class="fab fa-whatsapp"></i>
-
-Falar no WhatsApp
-
-</a>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 Luxo Semi Joias
-
-</p>
-
-</footer>
-
+      // Limpar campos
+      document.getElementById('nome').value = '';
+      document.getElementById('valor').value = '';
+      document.getElementById('descricao').value = '';
+      document.getElementById('imagem').value = '';
+    }
+  </script>
 </body>
 </html>
