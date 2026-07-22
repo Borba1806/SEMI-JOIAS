@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxo Áureo | Semi-joias</title>
+  <meta name="description" content="Loja de semi-joias com visual sofisticado, catálogo dinâmico e contato rápido para compra." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark">LA</span>
+        <div>
+          <strong>Luxo Áureo</strong>
+          <small>Semi-joias sofisticadas</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#inicio">Início</a>
+        <a href="#destaques">Destaques</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#cadastro">Cadastrar</a>
+        <a href="#contato" class="nav-cta">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Elegância em cada detalhe</span>
+          <h1>Semi-joias com presença, brilho e sofisticação.</h1>
+          <p>
+            Um site completo para apresentar sua marca, destacar coleções e cadastrar produtos dinamicamente com uma experiência visual moderna em tons escuros e dourados.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+            <a href="#cadastro" class="btn btn-secondary">Cadastrar produto</a>
+          </div>
+          <ul class="hero-badges">
+            <li>Design premium</li>
+            <li>Responsivo</li>
+            <li>Catálogo dinâmico</li>
+          </ul>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="hero-card large-card">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=80" alt="Semi-joias douradas em exposição" />
+            <div class="hero-card-info">
+              <span>Coleção Signature</span>
+              <strong>Brilho marcante para ocasiões especiais</strong>
+            </div>
+          </div>
+          <div class="hero-mini-grid">
+            <div class="hero-card mini-card">
+              <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca5?auto=format&fit=crop&w=600&q=80" alt="Anéis elegantes dourados" />
+              <div class="hero-card-info">
+                <span>Anéis</span>
+                <strong>Detalhes refinados</strong>
+              </div>
+            </div>
+            <div class="hero-card mini-card">
+              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Colar delicado sofisticado" />
+              <div class="hero-card-info">
+                <span>Colares</span>
+                <strong>Linhas sofisticadas</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features section">
+      <div class="container feature-grid">
+        <article class="feature reveal">
+          <span class="feature-number">01</span>
+          <h3>Visual de alto padrão</h3>
+          <p>Combinação de preto, cinza grafite e dourado para transmitir exclusividade e força de marca.</p>
+        </article>
+        <article class="feature reveal">
+          <span class="feature-number">02</span>
+          <h3>Catálogo inteligente</h3>
+          <p>Adicione produtos com imagem, nome, preço e descrição. Os dados ficam salvos no navegador com localStorage.</p>
+        </article>
+        <article class="feature reveal">
+          <span class="feature-number">03</span>
+          <h3>Contato rápido</h3>
+          <p>Cada peça possui botão para o cliente solicitar informações ou iniciar a compra com mensagem pronta.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section highlight-section" id="destaques">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Produtos em destaque</span>
+          <h2>Peças selecionadas para impressionar</h2>
+          <p>Exiba as joias mais desejadas logo na página inicial para aumentar o interesse e acelerar o contato.</p>
+        </div>
+        <div class="highlight-grid" id="highlightGrid"></div>
+      </div>
+    </section>
+
+    <section class="section catalog-section" id="catalogo">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Catálogo</span>
+          <h2>Cadastre e apresente suas semi-joias</h2>
+          <p>Clique em qualquer produto para visualizar melhor, ler detalhes e acessar o botão de contato.</p>
+        </div>
+
+        <div class="catalog-toolbar reveal">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar por nome ou descrição" />
+          </div>
+          <div class="catalog-stats" id="catalogStats">0 produtos cadastrados</div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section admin-section" id="cadastro">
+      <div class="container admin-grid">
+        <div class="section-heading reveal left-align">
+          <span class="eyebrow">Cadastro de produtos</span>
+          <h2>Sistema simples em JavaScript para gerenciar o catálogo</h2>
+          <p>Cadastre novas peças rapidamente. O produto aparecerá automaticamente em cards modernos no catálogo.</p>
+          <div class="tips-card">
+            <h3>Dica de uso</h3>
+            <p>Para produção, personalize o botão de contato com seu WhatsApp e substitua as imagens de exemplo pelas fotos reais da marca.</p>
+          </div>
+        </div>
+
+        <form class="product-form reveal" id="productForm">
+          <div class="form-group">
+            <label for="productName">Nome da semi-joia</label>
+            <input type="text" id="productName" required placeholder="Ex.: Colar Aurora Dourado" />
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Valor</label>
+            <input type="number" id="productPrice" required min="0" step="0.01" placeholder="Ex.: 189.90" />
+          </div>
+          <div class="form-group full">
+            <label for="productImage">URL da imagem</label>
+            <input type="url" id="productImage" required placeholder="https://seusite.com/imagem.jpg" />
+          </div>
+          <div class="form-group full">
+            <label for="productDescription">Descrição</label>
+            <textarea id="productDescription" rows="5" required placeholder="Descreva o acabamento, material, banho e estilo da peça"></textarea>
+          </div>
+          <div class="form-actions full">
+            <button type="submit" class="btn btn-primary">Adicionar produto</button>
+            <button type="button" class="btn btn-secondary" id="resetProducts">Restaurar produtos iniciais</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div class="container contact-box reveal">
+        <div>
+          <span class="eyebrow">Atendimento</span>
+          <h2>Pronto para vender com elegância</h2>
+          <p>Use o botão abaixo para personalizar seu canal de contato e receber pedidos, dúvidas e solicitações de orçamento.</p>
+        </div>
+        <a class="btn btn-primary" id="mainContactButton" href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20semi-joias." target="_blank" rel="noopener noreferrer">
+          Falar com a loja
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© <span id="currentYear"></span> Luxo Áureo. Site conceito para loja de semi-joias.</p>
+      <p>Feito com HTML, CSS e JavaScript puro.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <div class="modal-image-wrap">
+        <img id="modalImage" src="" alt="Produto ampliado" />
+      </div>
+      <div class="modal-info">
+        <span class="eyebrow">Detalhes da peça</span>
+        <h3 id="modalTitle"></h3>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-description" id="modalDescription"></p>
+        <div class="modal-actions">
+          <a href="#contato" class="btn btn-secondary">Ver atendimento</a>
+          <a id="modalContactBtn" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Solicitar informações</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
