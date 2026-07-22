@@ -1,0 +1,228 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f0f0f;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#111;
+border-bottom:1px solid #d4af37;
+}
+
+.logo{
+font-family:'Cinzel',serif;
+font-size:1.6rem;
+font-weight:700;
+color:#d4af37;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+.banner{
+height:85vh;
+background:
+linear-gradient(rgba(0,0,0,.6),
+rgba(0,0,0,.7)),
+url("https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1200");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.banner h1{
+font-size:3rem;
+font-family:'Cinzel',serif;
+color:#d4af37;
+margin-bottom:20px;
+}
+
+.banner p{
+max-width:600px;
+margin:auto;
+font-size:1.1rem;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+background:#d4af37;
+color:black;
+font-weight:600;
+border-radius:8px;
+text-decoration:none;
+}
+
+.destaques,
+.sobre,
+.contato,
+.catalogo-topo,
+.cadastro,
+.produtos{
+padding:70px 8%;
+text-align:center;
+}
+
+.destaques h2,
+.sobre h2,
+.contato h2,
+.catalogo-topo h1,
+.cadastro h2,
+.produtos h2{
+color:#d4af37;
+margin-bottom:30px;
+font-family:'Cinzel',serif;
+}
+
+.cards,
+.grid-produtos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:#181818;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.card h3{
+margin-top:15px;
+color:#d4af37;
+}
+
+.card p{
+padding:10px 20px 20px;
+}
+
+form{
+max-width:700px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,
+textarea{
+padding:15px;
+border:none;
+border-radius:8px;
+background:#1f1f1f;
+color:white;
+}
+
+button{
+padding:15px;
+background:#d4af37;
+border:none;
+font-weight:600;
+cursor:pointer;
+border-radius:8px;
+}
+
+.whatsapp{
+display:inline-block;
+margin-top:20px;
+background:#25d366;
+padding:15px 30px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.produto-card{
+background:#181818;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+.produto-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.produto-info{
+padding:20px;
+}
+
+.produto-info h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.preco{
+font-size:1.2rem;
+font-weight:bold;
+margin:10px 0;
+}
+
+.btn-compra{
+display:block;
+margin-top:15px;
+background:#25d366;
+padding:12px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+footer{
+padding:25px;
+text-align:center;
+background:#111;
+border-top:1px solid #d4af37;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.banner h1{
+font-size:2rem;
+}
+
+}
